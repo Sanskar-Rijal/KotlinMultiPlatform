@@ -3,9 +3,12 @@ package com.sanskar.rij.components
 import androidx.compose.runtime.Composable
 import com.sanskar.rij.model.Sections
 import com.sanskar.rij.model.Theme
+import com.sanskar.rij.style.LogoStyle
+import com.sanskar.rij.style.NavigationStyle
 import com.sanskar.rij.util.Constants.Font_Family
 import com.sanskar.rij.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
+import com.varabyte.kobweb.compose.css.TextDecorationLine
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -13,6 +16,7 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.navigation.Link
+import com.varabyte.kobweb.silk.components.style.toModifier
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Th
@@ -36,6 +40,7 @@ fun LeftSide(){
     Row {
         Image(
             src =Res.Image.logo ,
+            modifier = LogoStyle.toModifier(),
             description = "logo"
         )
     }
@@ -50,11 +55,12 @@ fun RightSide(){
         horizontalArrangement = Arrangement.End) {
         Sections.values().take(6).forEach {section->
             Link(
-                modifier = Modifier
+                modifier = NavigationStyle.toModifier()
                     .padding(right = 30.px)
                     .fontFamily(Font_Family)
                     .fontSize(18.px)
-                    .fontWeight(FontWeight.Normal),
+                    .fontWeight(FontWeight.Normal)
+                    .textDecorationLine(TextDecorationLine.None),
                 path = section.path,
                 text = section.title
             )

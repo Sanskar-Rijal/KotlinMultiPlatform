@@ -38,7 +38,7 @@ enum class Sections(
     ),
     Contact(
         id ="Contact",
-        title="Contact",
+        title="Contact Me",
         subtitle = "",
         path = "#Contact"
     ),
