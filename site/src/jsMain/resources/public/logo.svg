@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="100" viewBox="0 0 500 100">
+	<!-- Text "DESIGN" in bold and black -->
+	<text x="10" y="50" font-family="Arial" font-size="38" font-weight="bold" fill="#000000">SANSK</text>
+
+	<!-- Text "ER." in bold and #00A78E color -->
+	<text x="145" y="50" font-family="Arial" font-size="38" font-weight="bold" fill="#00A78E">AR.</text>
+</svg>
