@@ -24,7 +24,7 @@ val NavigationItemStyle = CssStyle {
                 property("--bs-link-color", Theme.Secondary.rgb)
             }
             .color(Theme.Secondary.rgb)
-            .transition(CSSTransition(property = "color", duration = 200.ms))
+            .transition(Transition.of(property = "color", duration = 200.ms, timingFunction = null, delay = null))
     }
     hover {
         Modifier
@@ -39,7 +39,7 @@ val LogoStyle = CssStyle {
     base {
         Modifier
             .transform { rotate(0.deg) }
-            .transition(CSSTransition(property = "transform", duration = 200.ms))
+            .transition(Transition.of(property = "transform", duration = 200.ms, timingFunction = null, delay = null))
     }
     hover {
         Modifier
@@ -47,22 +47,24 @@ val LogoStyle = CssStyle {
     }
 }
 
-val  SocialLinkStyle  by ComponentStyle{
+val SocialLinkStyle = CssStyle {
     base {
-        Modifier.color(Theme.Gray.rgb)
+        Modifier
+            .color(Theme.Gray.rgb)
+            .transition(CSSTransition(property = "color", duration = 200.ms))
     }
-    hover{
+    hover {
         Modifier.color(Theme.Primary.rgb)
     }
 }
 
-val MainButtonStyle by ComponentStyle{
-
-    base{
-        Modifier.width(100.px)
-            .transition(Transition.of(property = "width", duration = 200.ms, timingFunction = null, delay = null))
+val MainButtonStyle = CssStyle {
+    base {
+        Modifier
+            .width(100.px)
+            .transition(CSSTransition(property = "width", duration = 200.ms))
     }
-    hover{
+    hover {
         Modifier.width(120.px)
     }
 }
