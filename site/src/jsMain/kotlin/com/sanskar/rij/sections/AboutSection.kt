@@ -1,6 +1,6 @@
 package com.sanskar.rij.sections
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import com.sanskar.rij.components.SectionTitle
 import com.sanskar.rij.components.SkillBar
 import com.sanskar.rij.model.Sections
@@ -11,7 +11,9 @@ import com.sanskar.rij.style.AboutTextStyle
 import com.sanskar.rij.util.Constants
 import com.sanskar.rij.util.Constants.Font_Family
 import com.sanskar.rij.util.Constants.Section_Width
+import com.sanskar.rij.util.ObserveViewPort
 import com.sanskar.rij.util.Res
+import com.sanskar.rij.util.animatedPercentage
 import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -28,6 +30,8 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import kotlinx.coroutines.launch
+import org.jetbrains.compose.web.attributes.Scope
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.P
@@ -96,6 +100,37 @@ fun AboutImage(){
 //for text
 @Composable
 fun AboutMe(breakpoint:Breakpoint){
+
+    val scope = rememberCoroutineScope()
+
+    val animatedPercentagelist = remember{
+        mutableStateListOf(0,0,0,0,0) //5 different 0 values for 5 values
+    }
+
+    var viewportEntered by remember{
+        mutableStateOf(false)
+    }
+
+   ObserveViewPort(
+       sectionId = Sections.About.id,
+       distanceFromTop = 300.0,
+       onViewportEntered = {
+           viewportEntered = true
+           Skill.entries.forEach { skill->
+
+               scope.launch{
+                   animatedPercentage(
+                       percent =skill.percentage.value.toInt(),
+                       onUpdate ={
+                           animatedPercentagelist[skill.ordinal]=it //updating animatedPercentagelist
+
+                       }
+                   )
+               }
+           }
+       }
+   )
+
     Column(modifier = Modifier
         .fillMaxWidth(),
         verticalArrangement = Arrangement.Center){
@@ -120,10 +155,14 @@ fun AboutMe(breakpoint:Breakpoint){
             Text( Constants.hireme)
         }
 
-        Skill.values().forEach {skill ->
+        Skill.entries.forEach { skill ->
             SkillBar(title = skill.title,
-                 percentage = skill.percentage,
-                index = skill.ordinal)
+                 percentage =   if (viewportEntered)
+                     skill.percentage
+                 else 0.percent,
+                index = skill.ordinal ,//ordinal is the index value of our enum class
+                animatedPercentage = if (viewportEntered) animatedPercentagelist[skill.ordinal] else 0
+                )
         }
 
     }

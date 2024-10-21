@@ -3,7 +3,9 @@ package com.sanskar.rij.components
 import androidx.compose.runtime.Composable
 import com.sanskar.rij.model.Theme
 import com.sanskar.rij.util.Constants.Font_Family
+import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.FontWeight
+import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -11,10 +13,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
-import org.jetbrains.compose.web.css.CSSSizeValue
-import org.jetbrains.compose.web.css.CSSUnit
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
@@ -23,7 +22,8 @@ fun SkillBar(
     title:String,
     index:Int,
     percentage:CSSSizeValue<CSSUnit.percent> = 50.percent,
-    progressBarHeight:CSSSizeValue<CSSUnit.px> =5.px,){
+    progressBarHeight:CSSSizeValue<CSSUnit.px> =5.px,
+    animatedPercentage:Int){
 
     Column(modifier = Modifier
         .fillMaxWidth()
@@ -51,7 +51,7 @@ fun SkillBar(
                     .color(Theme.Secondary.rgb)
                     .toAttrs()
             ) {
-                Text(percentage.toString())
+                Text("$animatedPercentage %")
             }
         }
 
@@ -64,7 +64,15 @@ fun SkillBar(
                 Box(modifier = Modifier
                     .height(progressBarHeight)
                     .fillMaxWidth(percentage)
-                    .backgroundColor(Theme.Primary.rgb))
+                    .backgroundColor(Theme.Primary.rgb)
+                    .transition(
+                        Transition.of(
+                            property = "width",
+                            duration = 1000.ms,
+                            timingFunction = null,
+                            delay = 100.ms * index
+                        )
+                    ))
             }
 
     }
