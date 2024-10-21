@@ -35,13 +35,25 @@ fun SkillBar(
             .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween) {
 
-            P(attrs = Modifier
-                .fontFamily(Font_Family)
-                .fontWeight(FontWeight.Normal)
-                .color(Theme.Secondary.rgb)
-                .toAttrs()) {
+            P(
+                attrs = Modifier
+                    .fontFamily(Font_Family)
+                    .fontWeight(FontWeight.Normal)
+                    .color(Theme.Secondary.rgb)
+                    .toAttrs()
+            ) {
                 Text(title)
             }
+            P(
+                attrs = Modifier
+                    .fontFamily(Font_Family)
+                    .fontWeight(FontWeight.Normal)
+                    .color(Theme.Secondary.rgb)
+                    .toAttrs()
+            ) {
+                Text(percentage.toString())
+            }
+        }
 
             Box(modifier =  Modifier.fillMaxWidth()) {
                 Box(modifier = Modifier
@@ -54,8 +66,6 @@ fun SkillBar(
                     .fillMaxWidth(percentage)
                     .backgroundColor(Theme.Primary.rgb))
             }
-
-        }
 
     }
 }

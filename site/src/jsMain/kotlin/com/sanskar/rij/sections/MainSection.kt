@@ -9,7 +9,6 @@ import com.sanskar.rij.model.Theme
 import com.sanskar.rij.style.MainButtonStyle
 import com.sanskar.rij.util.Constants
 import com.sanskar.rij.util.Constants.Font_Family
-import com.sanskar.rij.util.Constants.Section_Width
 import com.sanskar.rij.util.Res
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -28,8 +27,6 @@ import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import org.jetbrains.compose.web.attributes.InputType
-import org.jetbrains.compose.web.css.pc
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Button
@@ -38,7 +35,9 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun MainSection(){
-    Box(modifier = Modifier.maxWidth(1920.px),
+    Box(modifier = Modifier
+        .id(Sections.Home.id)
+        .maxWidth(1920.px),
         contentAlignment = Alignment.TopCenter
     ) {
         MainBackground()
@@ -83,6 +82,7 @@ fun MainContent() {
                 numColumns = numColumns(base = 1, md = 2)
             ) {
                 MainText(breakpoint)
+                //if(breakpoint >= Breakpoint.MD)
                 Photo()
             }
         }
@@ -170,13 +170,12 @@ fun MainText(breakpoint: Breakpoint){
 @Composable
 fun Photo(){
     Column(modifier = Modifier
-        .fillMaxSize(80.percent)
+        .fillMaxSize(60.percent)
         .fillMaxHeight(),
         verticalArrangement = Arrangement.Bottom){
         Image(
             src =Res.Image.pic,
-            modifier = Modifier.fillMaxWidth()
-                .scale(1.5f),
+            modifier = Modifier.fillMaxSize(),
             description = "main image",
         )
     }

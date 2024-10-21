@@ -7,10 +7,10 @@ enum class Sections(
     val path:String
 ) {
     Home(
-        id ="home",
+        id ="Home",
         title="Home",
         subtitle = "",
-        path = "#home"
+        path = "#Home"
     ),
     About(
         id ="About",
