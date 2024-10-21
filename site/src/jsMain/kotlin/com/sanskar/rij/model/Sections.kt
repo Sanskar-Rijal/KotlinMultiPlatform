@@ -14,8 +14,8 @@ enum class Sections(
     ),
     About(
         id ="About",
-        title="About",
-        subtitle = "",
+        title="About me",
+        subtitle = "Why To Hire Me?",
         path = "#About"
     ),
     Service(

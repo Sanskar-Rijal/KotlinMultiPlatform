@@ -6,6 +6,7 @@ import com.sanskar.rij.components.Header
 import com.sanskar.rij.components.SocialBar
 import com.sanskar.rij.model.Sections
 import com.sanskar.rij.model.Theme
+import com.sanskar.rij.style.MainButtonStyle
 import com.sanskar.rij.util.Constants
 import com.sanskar.rij.util.Constants.Font_Family
 import com.sanskar.rij.util.Constants.Section_Width
@@ -24,6 +25,7 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.navigation.Link
+import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.attributes.InputType
@@ -143,12 +145,13 @@ fun MainText(breakpoint: Breakpoint){
                 Text(Constants.About)
             }
 
-            Button(attrs = Modifier
+            Button(attrs = MainButtonStyle.toModifier()
                 .height(40.px)
                 .border (width=0.px)
                 .borderRadius(r=5.px)
                 .backgroundColor(Theme.Primary.rgb)
                 .color(Colors.White)
+                .cursor(Cursor.Pointer)
                 .toAttrs(),
                 ) {
                Link(

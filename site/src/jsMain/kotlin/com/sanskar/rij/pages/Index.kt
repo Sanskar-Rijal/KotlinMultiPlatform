@@ -1,6 +1,7 @@
 package com.sanskar.rij.pages
 
 import androidx.compose.runtime.*
+import com.sanskar.rij.sections.AboutSection
 import com.sanskar.rij.sections.MainSection
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -18,5 +19,6 @@ fun HomePage() {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally) {
         MainSection()
+        AboutSection()
     }
 }
