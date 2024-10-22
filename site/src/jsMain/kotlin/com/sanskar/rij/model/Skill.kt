@@ -13,11 +13,11 @@ enum class Skill(  val title: String,
     ),
     Accountable(
         title = "Accountable",
-        percentage = 90.percent
+        percentage = 80.percent
     ),
     HardWorking(
         title = "Hard Working",
-        percentage = 70.percent
+        percentage = 95.percent
     ),
     Value(
         title = "Value for Money",

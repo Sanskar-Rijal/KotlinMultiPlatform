@@ -43,5 +43,14 @@ object Res{
         const val logo="logo.svg"
         const val pic ="smth.png"
         const val money="moneey.jpg"
+
+        const val portfolio1="Note.jpg"
+        const val portfolio2 =" drawing.jpg"
+        const val portfolio3="weather.jpg"
+        const val portfolio4="quiz.jpeg"
+        const val portfolio5="jet.png"
+
     }
+
+
 }

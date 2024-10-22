@@ -1,7 +1,6 @@
 package com.sanskar.rij.sections
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import com.sanskar.rij.components.Header
 import com.sanskar.rij.components.SocialBar
 import com.sanskar.rij.model.Sections
@@ -24,8 +23,8 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.navigation.Link
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -77,7 +76,7 @@ fun MainContent() {
                         if (breakpoint >= Breakpoint.MD)
                             80.percent
                         else
-                            90.percent
+                            100.percent
                     ),
                 numColumns = numColumns(base = 1, md = 2)
             ) {
@@ -94,10 +93,10 @@ fun MainText(breakpoint: Breakpoint){
     Row(horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically) {
 
-        if(breakpoint > Breakpoint.MD)
+       // if(breakpoint > Breakpoint.MD)
         SocialBar()
 
-        Column{
+        Column(modifier = Modifier){
             P(attrs = Modifier
                 .margin(topBottom = 0.px)
                 .fontFamily(Font_Family)

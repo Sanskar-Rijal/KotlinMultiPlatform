@@ -1,7 +1,6 @@
 package com.sanskar.rij.style
 
 import com.sanskar.rij.model.Theme
-import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors

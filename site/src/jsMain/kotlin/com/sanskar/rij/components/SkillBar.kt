@@ -3,7 +3,6 @@ package com.sanskar.rij.components
 import androidx.compose.runtime.Composable
 import com.sanskar.rij.model.Theme
 import com.sanskar.rij.util.Constants.Font_Family
-import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.Transition
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement

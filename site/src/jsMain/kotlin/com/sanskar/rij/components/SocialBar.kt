@@ -17,7 +17,7 @@ import org.jetbrains.compose.web.css.px
 @Composable
 fun SocialBar(){
     Column(modifier = Modifier
-        .margin(right = 25.px)
+        .margin(right = 20.px)
         .padding { topBottom(25.px) }
         .minWidth(40.px)
         .borderRadius(r = 20.px)
