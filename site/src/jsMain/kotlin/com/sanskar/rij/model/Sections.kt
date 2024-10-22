@@ -21,7 +21,7 @@ enum class Sections(
     Service(
         id ="Service",
         title="Service",
-        subtitle = "",
+        subtitle = "I'm Really Good At",
         path = "#Service"
     ),
     Portfolio(

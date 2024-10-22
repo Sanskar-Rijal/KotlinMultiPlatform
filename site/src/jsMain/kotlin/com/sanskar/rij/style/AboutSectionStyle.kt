@@ -43,7 +43,7 @@ val AboutImageStyle = CssStyle {
 val AboutTextStyle = CssStyle {
     base {
         Modifier
-            .opacity(65.percent)
+            .opacity(55.percent)
             .transition(Transition.of(property = "opacity", duration = 200.ms, timingFunction = null, delay = null))
     }
     hover {

@@ -3,6 +3,8 @@ package com.sanskar.rij.pages
 import androidx.compose.runtime.*
 import com.sanskar.rij.sections.AboutSection
 import com.sanskar.rij.sections.MainSection
+import com.sanskar.rij.sections.ServiceContent
+import com.sanskar.rij.sections.ServiceSection
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -20,5 +22,6 @@ fun HomePage() {
         horizontalAlignment = Alignment.CenterHorizontally) {
         MainSection()
         AboutSection()
+        ServiceSection()
     }
 }
