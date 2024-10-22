@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.sanskar.rij.model.Service
 import com.sanskar.rij.model.Theme
 import com.sanskar.rij.style.AboutTextStyle
+import com.sanskar.rij.style.ServiceCardStyle
 import com.sanskar.rij.util.Constants
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -21,16 +22,15 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun ServiceCard(service: Service){
-    Column(modifier = Modifier
+    Column(modifier = ServiceCardStyle.toModifier()
         .maxWidth(300.px)
         .margin (all=20.px)
-        .padding(all = 20.px)
-        .border(width = 2.px,
-            style = LineStyle.Solid,
-            color = Theme.LightGray.rgb)
-    ) {
+        .padding(all = 20.px)){
 
-        Box(modifier = Modifier
+        Box(
+            //giving id to speicify this box so that we can change color of text
+            modifier = Modifier
+                .id("iconBox")
             .padding(10.px)
             .margin(bottom = 20.px)
             .border (width = 2.px, style = LineStyle.Solid,
@@ -58,7 +58,6 @@ fun ServiceCard(service: Service){
                     .margin(top = 0.px, bottom = 10.px)
                     .fontFamily(Constants.Font_Family)
                     .fontSize(18.px)
-                    .color(Theme.Secondary.rgb)
                     .fontWeight(FontWeight.Bold)
                     .toAttrs()
             ) {
@@ -73,7 +72,6 @@ fun ServiceCard(service: Service){
                     .margin(top = 0.px, bottom = 0.px)
                     .fontFamily(Constants.Font_Family)
                     .fontSize(15.px)
-                    .color(Theme.Secondary.rgb)
                     .fontWeight(FontWeight.Normal)
                     .toAttrs()
             ) {
