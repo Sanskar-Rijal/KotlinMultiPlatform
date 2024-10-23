@@ -13,7 +13,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.padding
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun ContactSection() {
+fun ContactSections() {
     Box(
         modifier = Modifier
             .id(Sections.Contact.id)
