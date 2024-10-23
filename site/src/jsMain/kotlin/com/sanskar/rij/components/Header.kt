@@ -5,6 +5,7 @@ import com.sanskar.rij.model.Sections
 import com.sanskar.rij.model.Theme
 import com.sanskar.rij.style.LogoStyle
 import com.sanskar.rij.style.NavigationItemStyle
+import com.sanskar.rij.style.SocialLinkStyle
 import com.sanskar.rij.util.Constants.Font_Family
 import com.sanskar.rij.util.Res
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -18,8 +19,8 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.icons.fa.FaBars
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
 import com.varabyte.kobweb.silk.components.navigation.Link
-import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -72,6 +73,7 @@ fun RightSide() {
         horizontalArrangement = Arrangement.End
     ) {
         Sections.entries.toTypedArray().take(6).forEach { section ->
+
             Link(
                 modifier = NavigationItemStyle.toModifier()
                     .padding(right = 30.px)

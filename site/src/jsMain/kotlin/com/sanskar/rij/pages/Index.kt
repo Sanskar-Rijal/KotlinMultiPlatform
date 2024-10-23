@@ -21,5 +21,6 @@ fun HomePage() {
         AboutSection()
         ServiceSection()
         PortfolioSection()
+        ContactSection()
     }
 }
