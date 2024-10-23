@@ -1,6 +1,8 @@
 package com.sanskar.rij.pages
 
 import androidx.compose.runtime.*
+import com.sanskar.rij.components.Header
+import com.sanskar.rij.components.RightSide
 import com.sanskar.rij.sections.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column

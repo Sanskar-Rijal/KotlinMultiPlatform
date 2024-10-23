@@ -15,8 +15,11 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.icons.fa.FaBars
+import com.varabyte.kobweb.silk.components.icons.fa.FaFacebook
 import com.varabyte.kobweb.silk.components.icons.fa.IconSize
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
@@ -24,14 +27,14 @@ import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.P
+import org.jetbrains.compose.web.dom.Text
+
 
 @Composable
 fun Header(){
-
-
     //creating state to make it responsive
     val breakpoint = rememberBreakpoint()
-
     Row(
         modifier = Modifier
             .fillMaxWidth(if(breakpoint>Breakpoint.MD)80.percent else 90.percent ) //it will cover only 80%
@@ -72,19 +75,37 @@ fun RightSide() {
             .padding(all = 20.px),
         horizontalArrangement = Arrangement.End
     ) {
-        Sections.entries.toTypedArray().take(6).forEach { section ->
+        Sections.entries.forEach { section ->
+//            Link(
+//                modifier = NavigationItemStyle.toModifier()
+//                    .padding(right = 30.px)
+//                    .fontFamily(Font_Family)
+//                    .fontSize(18.px)
+//                    .fontWeight(FontWeight.Normal)
+//                    .textDecorationLine(TextDecorationLine.None),
+//                path = section.path,
+//                text = section.title
+//            )
 
             Link(
                 modifier = NavigationItemStyle.toModifier()
                     .padding(right = 30.px)
                     .fontFamily(Font_Family)
                     .fontSize(18.px)
+                    //.align(Alignment.CenterVertically)
                     .fontWeight(FontWeight.Normal)
-                    .textDecorationLine(TextDecorationLine.None)
-                ,
-                text = section.title,
+                    .textDecorationLine(TextDecorationLine.None),
                 path = section.path
-            )
+            ){
+                P(attrs = NavigationItemStyle.toModifier()
+                    .margin(topBottom = 0.px)
+                    .toAttrs()
+                ){
+                    Text(section.title)
+                }
+            }
         }
     }
 }
+
+

@@ -62,7 +62,7 @@ fun PortfolioCard(
                 Box(modifier = Modifier
                     .id("greenOverlay")
                     .fillMaxHeight()
-                    .backgroundColor(com.varabyte.kobweb.compose.ui.graphics.Color.argb(a=0.5f,r = 0,g=167,b=142)),
+                    .backgroundColor(com.varabyte.kobweb.compose.ui.graphics.Color.argb(a = 0.5f, r = 80, g = 216, b = 230)),
                     contentAlignment = Alignment.Center
                     //a value is the opacity
                 ) {
