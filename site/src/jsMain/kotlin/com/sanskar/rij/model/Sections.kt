@@ -30,28 +30,10 @@ enum class Sections(
         subtitle = "My Projects",
         path = "#Portfolio"
     ),
-    Experience(
-        id ="Experience",
-        title="Experience",
-        subtitle = "",
-        path = "#Experience"
-    ),
     Contact(
         id ="Contact",
         title="Contact Me",
         subtitle = "",
         path = "#Contact"
-    ),
-    Testinomal(
-        id ="Testinomal",
-        title="Testinomal",
-        subtitle = "",
-        path = "#Testinomal"
-    ),
-    Achievements(
-        id ="Achievements",
-        title="Achievements",
-        subtitle = "",
-        path = "#Achievements"
     ),
 }
