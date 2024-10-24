@@ -93,7 +93,7 @@ fun MainText(breakpoint: Breakpoint){
     Row(horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically) {
 
-       // if(breakpoint > Breakpoint.MD)
+        //if(breakpoint > Breakpoint.MD)
         SocialBar()
 
         Column(modifier = Modifier){
@@ -157,7 +157,7 @@ fun MainText(breakpoint: Breakpoint){
                    modifier = Modifier
                        .color(Colors.White)
                        .textDecorationLine(TextDecorationLine.None),
-                        text = "Hire me",
+                        text = "Let's Talk",
                    path = Sections.Contact.path
                )
             }

@@ -7,12 +7,9 @@ import com.sanskar.rij.style.MainButtonStyle
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.style.KobwebComposeStyleSheet.attr
-import com.varabyte.kobweb.compose.ui.Alignment
-import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.attrsModifier
+import com.varabyte.kobweb.compose.ui.*
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.attributes.InputType
@@ -22,11 +19,20 @@ import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun ContactForm(breakpoint: Breakpoint) {
-    Form(action = "") {
+    Form(action = "https://formspree.io/f/xanynpkp",
+        attrs = Modifier
+            .attrsModifier {
+                attr("method","POST")
+            }
+            .toAttrs()
+    ) {
         Label(
             attrs = Modifier
                 .classNames("form-label")
-                .toAttrs()
+                .toAttrs(),
+            forId = "inputName"
+
+
         )
         {
             Text("Name")
@@ -46,15 +52,17 @@ fun ContactForm(breakpoint: Breakpoint) {
                 .attrsModifier {
                     attr("placeholder", "Sans Rijal")
                     attr("required", "true")
+                    attr("name","name")
                 }
-                .backgroundColor(Theme.LightGray.rgb)
+                .backgroundColor(Theme.LighterGray.rgb)
                 .toAttrs()
         )
 
         Label(
             attrs = Modifier
                 .classNames("form-label")
-                .toAttrs()
+                .toAttrs(),
+            forId ="inputEmail"
         )
         {
             Text("Email")
@@ -74,15 +82,17 @@ fun ContactForm(breakpoint: Breakpoint) {
                 .attrsModifier {
                     attr("placeholder", "xyz@gmail.com")
                     attr("required", "true")
+                    attr("name","email")
                 }
-                .backgroundColor(Theme.LightGray.rgb)
+                .backgroundColor(Theme.LighterGray.rgb)
                 .toAttrs()
         )
 
         Label(
             attrs = Modifier
                 .classNames("form-label")
-                .toAttrs()
+                .toAttrs(),
+            forId ="inputMessage"
         )
         {
             Text("Message")
@@ -91,6 +101,11 @@ fun ContactForm(breakpoint: Breakpoint) {
             attrs = InputStyle.toModifier()
                 .id("inputMessage")
                 .height(180.px)
+                .backgroundColor(Theme.LighterGray.rgb)
+//                .styleModifier {
+//                    property("background-color", Theme.LightGray.rgb) // Use property for background
+//                    property("color", "inherit")
+//                }
                 .classNames("form-control")
                 .margin(bottom = 20.px)
                 .width(
@@ -102,8 +117,8 @@ fun ContactForm(breakpoint: Breakpoint) {
                 .attrsModifier {
                     attr("placeholder", "Your Messge")
                     attr("required", "true")
+                    attr("name","msg")
                 }
-                .backgroundColor(Theme.LightGray.rgb)
                 .toAttrs()
         )
 
