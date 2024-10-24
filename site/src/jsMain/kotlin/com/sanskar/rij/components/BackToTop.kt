@@ -60,7 +60,7 @@ fun BackToTopButton() {
                 )
                 .backgroundColor(Theme.Primary.rgb)
                 .cursor(Cursor.Pointer)
-                .onClick {
+                .onClick {//check
                     document.documentElement?.scroll(x = 0.0, y = 0.0)
                 }
                 .styleModifier {
