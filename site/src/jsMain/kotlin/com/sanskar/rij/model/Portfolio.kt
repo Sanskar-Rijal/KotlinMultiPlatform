@@ -12,31 +12,38 @@ enum class Portfolio(
     One(
         image = Res.Image.portfolio1,
         title = "Note App",
-        description = "You can add and Save notes",
+        description = "Save Notes",
         link = "https://github.com/Sanskar-Rijal/Note_App"
     ),
     Two(
         image = Res.Image.portfolio2,
         title = "Drawing App",
-        description = "Painting App which can be used to draw image",
+        description = "Draw anything",
         link = "https://github.com/Sanskar-Rijal/Drawing-App"
     ),
     Three(
         image = Res.Image.portfolio3,
         title = "Weather App",
-        description = "App that shows weather of any country you choose",
+        description = "See Weather",
         link = "https://github.com/Sanskar-Rijal/Weather"
     ),
     Four(
         image = Res.Image.portfolio4,
         title = "Flag quiz",
-        description = "Shows a flag and asks us to guess the country ",
+        description = "Game ",
         link ="https://github.com/Sanskar-Rijal/Quiz-app"
     ),
     Five(
         image = Res.Image.portfolio5,
         title = "Jet Quiz",
-        description = "Quiz app with more than 2000 questions",
+        description = "Game",
         link = "https://github.com/Sanskar-Rijal/JetQuiz"
+    ),
+    Six(
+    image = Res.Image.portfolio6,
+    title = "Wordle",
+    description = "Game",
+    link = "https://github.com/Sanskar-Rijal/Wordle"
     )
+
 }

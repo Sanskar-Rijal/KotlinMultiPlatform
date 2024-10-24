@@ -15,7 +15,7 @@ enum class Sections(
     About(
         id ="About",
         title="About me",
-        subtitle = "Why To Hire Me?",
+        subtitle = "This is all that I know about myself",
         path = "#About"
     ),
     Service(

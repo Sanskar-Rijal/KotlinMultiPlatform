@@ -32,7 +32,7 @@ import org.jetbrains.compose.web.dom.Text
 
 
 @Composable
-fun Header(){
+fun Header(onMenuClicked: () -> Unit){
     //creating state to make it responsive
     val breakpoint = rememberBreakpoint()
     Row(
@@ -42,25 +42,29 @@ fun Header(){
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        LeftSide(breakpoint)
+        LeftSide(breakpoint,onMenuClicked)
         if(breakpoint > Breakpoint.MD)
         RightSide()
     }
 }
 
 @Composable
-fun LeftSide(breakpoint: Breakpoint){
+fun LeftSide(breakpoint: Breakpoint,onMenuClicked: () -> Unit){
 
     Row(verticalAlignment = Alignment.CenterVertically) {
         if( breakpoint <= Breakpoint.MD) {
             FaBars(   //when device is mobile or sth then it will show 3 bars to display
-                modifier = Modifier.margin { right(15.px) },
+                modifier = Modifier.margin (right=15.px)
+                    .onClick {
+                        onMenuClicked()
+                    },
                 size = IconSize.XL
             )
         }
         Image(
             src = Res.Image.logo ,
-            modifier = LogoStyle.toModifier(),
+            modifier = LogoStyle.toModifier()
+                .align(Alignment.CenterVertically),
             description = "logo"
         )
     }

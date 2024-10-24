@@ -81,10 +81,9 @@ fun PortfolioCards(breakpoint: Breakpoint){
         .scrollBehavior(ScrollBehavior.Smooth)
     ) {
 
-
         Portfolio.entries.forEach {port->
 
-            PortfolioCard(modifier = Modifier.margin(right = if(port != Portfolio.Five) 25.px else 0.px),
+            PortfolioCard(modifier = Modifier.margin(right = if(port != Portfolio.Six) 25.px else 0.px),
                 portfolio = port,
                 link = port.link)
         }

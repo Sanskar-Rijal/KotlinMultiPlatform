@@ -27,7 +27,7 @@ kobweb {
                 }
             }
 
-            description.set("Powered by Kobweb")
+            description.set("Powered by Sans")
         }
     }
 }

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
-    <text x="10" y="40" font-family="Arial" font-weight="bold" font-size="48" fill="black">Apr</text>
-    <text x="95" y="40" font-family="Arial" font-weight="bold" font-size="48" fill="rgb(0,119,182)">il</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 160 60">
+    <text x="0" y="40" font-family="Arial" font-weight="bold" font-size="48" fill="black">Apr</text>
+    <text x="85" y="40" font-family="Arial" font-weight="bold" font-size="48" fill="rgb(0,119,182)">il</text>
 </svg>

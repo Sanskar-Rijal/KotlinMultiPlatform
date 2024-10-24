@@ -50,6 +50,7 @@ object Res{
         const val portfolio3="weather.jpg"
         const val portfolio4="quiz.jpeg"
         const val portfolio5="jet.png"
+        const val portfolio6="wordle.jpg"
 
     }
 

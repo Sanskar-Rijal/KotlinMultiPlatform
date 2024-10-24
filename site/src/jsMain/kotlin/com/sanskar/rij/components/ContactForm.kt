@@ -50,7 +50,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                         250.px
                 )
                 .attrsModifier {
-                    attr("placeholder", "Sans Rijal")
+                    attr("placeholder", "April")
                     attr("required", "true")
                     attr("name","name")
                 }

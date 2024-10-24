@@ -43,8 +43,7 @@ fun PortfolioCard(
     ){
         Column(modifier= modifier
             .id("columnParent")
-            .width(Width.MaxContent)
-                 ) {
+            .width(Width.MaxContent)) {
             Box( modifier= Modifier
                 .id("boxParent")
                 .fillMaxWidth()
@@ -97,7 +96,7 @@ fun PortfolioCard(
                         .opacity(50.percent)
                         .color(Theme.Secondary.rgb)
                         .toAttrs()) {
-                    Text(portfolio.title)
+                    Text(portfolio.description)
                 }
             }
         }
